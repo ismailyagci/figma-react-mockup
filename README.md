@@ -25,16 +25,16 @@ For building the plugin for production, use `npm run build`.
 This plugin is built using React and leverages the Vite build tool for an efficient development experience. The main entry point for the plugin UI is `src/main.jsx`, which renders the React application:
 
 ```javascript:src/main.jsx
-1|import React from 'react'
-2|import ReactDOM from 'react-dom/client'
-3|import App from './App.jsx'
-4|import './index.css'
-5|
-6|ReactDOM.createRoot(document.getElementById('root')).render(
-7|  <React.StrictMode>
-8|    <App />
-9|  </React.StrictMode>,
-10|)
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+import './index.css'
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+)
 ```
 
 The `App` component (`src/app.jsx`) orchestrates the plugin's functionality, handling device selection, image generation, and UI rendering.
@@ -44,18 +44,18 @@ The `App` component (`src/app.jsx`) orchestrates the plugin's functionality, han
 The plugin UI is defined in `index.html`, which serves as the container for the React application:
 
 ```html:index.html
-1|<!doctype html>
-2|<html lang="en">
-3|  <head>
-4|    <meta charset="UTF-8" />
-5|    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-6|    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-7|  </head>
-8|  <body>
-9|    <div id="root"></div>
-10|    <script type="module" src="/src/main.jsx"></script>
-11|  </body>
-12|</html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
 ```
 
 ## Figma Plugin API Integration
@@ -71,24 +71,24 @@ The plugin uses CSS for styling, organized into component-specific files within 
 The plugin's metadata is defined in `manifest.json`, specifying details like the plugin name, API version, and entry points for the plugin code and UI:
 
 ```json:manifest.json
-1|{
-2|  "name": "Mockup Magic | Elevate Your Figma Designs",
-3|  "id": "1353080571822508263",
-4|  "api": "1.0.0",
-5|  "main": "lib/code.js",
-6|  "capabilities": [],
-7|  "enableProposedApi": false,
-8|  "editorType": [
-9|    "figma"
-10|  ],
-11|  "ui": "dist/index.html",
-12|  "networkAccess": {
-13|    "allowedDomains": [
-14|      "none"
-15|    ]
-16|  },
-17|  "documentAccess": "dynamic-page"
-18|}
+{
+  "name": "Mockup Magic | Elevate Your Figma Designs",
+  "id": "1353080571822508263",
+  "api": "1.0.0",
+  "main": "lib/code.js",
+  "capabilities": [],
+  "enableProposedApi": false,
+  "editorType": [
+    "figma"
+  ],
+  "ui": "dist/index.html",
+  "networkAccess": {
+  "allowedDomains": [
+      "none"
+    ]
+  },
+  "documentAccess": "dynamic-page"
+}
 ```
 
 ## Contributing
