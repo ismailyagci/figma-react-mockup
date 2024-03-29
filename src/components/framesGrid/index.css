@@ -1,0 +1,19 @@
+.framesGrid {
+  overflow-y: auto;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 20px;
+  gap: 10px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.framesGridItem {
+  border: 2px solid #282828;
+  border-radius: 8px;
+}
+
+.framesGridItemImage {
+  max-width: 100%;
+}

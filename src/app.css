@@ -1,0 +1,54 @@
+.appContainer {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  max-width: 100%;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: #22272B;
+  min-height: 100vh;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 240px;
+}
+
+.sidebarTitle {
+  font-weight: bold;
+  padding-left: 10px;
+  padding-top: 20px;
+  box-sizing: border-box;
+  padding-bottom: 10px;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+  box-sizing: border-box;
+  max-height: 100vh;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  align-items: center;
+  height: 80px;
+}
+
+.imageGenerationLoadingContainer {
+  overflow-y: auto;
+  max-height: 100%;
+}

@@ -1,0 +1,11 @@
+.deviceCard {
+  padding: 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: transparent;
+  border-radius: 4px;
+}
+
+.deviceCardSelected {
+  background-color: #161A1D;
+}

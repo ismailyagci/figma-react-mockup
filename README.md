@@ -1,0 +1,96 @@
+# Figma React Mockup Plugin
+
+[Demo](https://www.figma.com/community/plugin/1353080571822508263/mockup-magic-elevate-your-figma-designs)
+
+This project is a Figma plugin designed to elevate your design workflow by generating device mockups directly within Figma. Utilizing React for the UI and leveraging the Figma Plugin API, this tool allows designers to quickly create high-quality mockups for presentations or prototyping.
+
+## Features
+
+- **Device Frame Selection**: Choose from a variety of device frames to wrap your designs in.
+- **Image Generation**: Convert selected frames in your Figma file into images, then apply them to the chosen device mockup.
+- **Real-time Preview**: Instantly preview how your design looks on different devices.
+
+## Getting Started
+
+To get started with the plugin development:
+
+1. Clone the repository to your local machine.
+2. Install dependencies by running `npm install`.
+3. Start the development server with `npm run dev`.
+
+For building the plugin for production, use `npm run build`.
+
+## Development
+
+This plugin is built using React and leverages the Vite build tool for an efficient development experience. The main entry point for the plugin UI is `src/main.jsx`, which renders the React application:
+
+```javascript:src/main.jsx
+1|import React from 'react'
+2|import ReactDOM from 'react-dom/client'
+3|import App from './App.jsx'
+4|import './index.css'
+5|
+6|ReactDOM.createRoot(document.getElementById('root')).render(
+7|  <React.StrictMode>
+8|    <App />
+9|  </React.StrictMode>,
+10|)
+```
+
+The `App` component (`src/app.jsx`) orchestrates the plugin's functionality, handling device selection, image generation, and UI rendering.
+
+## Plugin UI
+
+The plugin UI is defined in `index.html`, which serves as the container for the React application:
+
+```html:index.html
+1|<!doctype html>
+2|<html lang="en">
+3|  <head>
+4|    <meta charset="UTF-8" />
+5|    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+6|    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+7|  </head>
+8|  <body>
+9|    <div id="root"></div>
+10|    <script type="module" src="/src/main.jsx"></script>
+11|  </body>
+12|</html>
+```
+
+## Figma Plugin API Integration
+
+The Figma Plugin API is used to interact with the Figma document and UI. The main logic for this interaction is found in `lib/code.js`, which handles tasks such as selecting elements, generating images from selections, and creating image frames within the Figma document.
+
+## Styling
+
+The plugin uses CSS for styling, organized into component-specific files within the `src/components` directory. Global styles are defined in `src/index.css`.
+
+## Configuration
+
+The plugin's metadata is defined in `manifest.json`, specifying details like the plugin name, API version, and entry points for the plugin code and UI:
+
+```json:manifest.json
+1|{
+2|  "name": "Mockup Magic | Elevate Your Figma Designs",
+3|  "id": "1353080571822508263",
+4|  "api": "1.0.0",
+5|  "main": "lib/code.js",
+6|  "capabilities": [],
+7|  "enableProposedApi": false,
+8|  "editorType": [
+9|    "figma"
+10|  ],
+11|  "ui": "dist/index.html",
+12|  "networkAccess": {
+13|    "allowedDomains": [
+14|      "none"
+15|    ]
+16|  },
+17|  "documentAccess": "dynamic-page"
+18|}
+```
+
+## Contributing
+
+Contributions to the Figma React Mockup Plugin are welcome. Please ensure to follow the project's coding and styling conventions.
